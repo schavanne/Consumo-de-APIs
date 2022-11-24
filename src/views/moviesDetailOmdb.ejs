@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (movie != null) { %>
+        <title><%= movie.title %> </title>
+    <% } %> 
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <%= console.log(movie) %> 
+    <% if (movie == null) { %>
+        <h1>Pelicula inexistente. </h1>    
+    <% } else { %>
+        <h1><%= movie.title %> </h1>    
+        <br>
+        <figure>
+            <img src="/img/movies/<%= movie.id %>-movie.jpg" alt="<%= movie.title %>">
+        </figure>
+        
+        <p>AÑO: <%= movie.year %> </p>
+        <p>PREMIOS: <%= movie.awards %> </p>
+        <p>DURACIÓN: <%= movie.length%> </p>
+
+        <br>
+    <% } %>
+    
+
+</body>
+</html>
